@@ -123,7 +123,7 @@ print(diccionario.items())"""
 
 #Practicas:
     #1.-Programa que pida al usuario un número e como resultado imprima si el número es positivo o negativo 
-
+"""
 def pos_neg(a):
     if a == 0:
         return print("Tú número es cero")
@@ -133,9 +133,9 @@ def pos_neg(a):
         return print("Tú número es Negativo")
 n = int(input("Favor de ingresar un número: "))
 pos_neg(n)
-
+"""
     #2.-Programa que pida al usuario un número e imprima si el número ingresado esta en el rango de 1 a 7 
-
+"""
 def siete(a):
     if a >= 1 and a <=7:
         return print("Tú número es valido")
@@ -143,11 +143,11 @@ def siete(a):
         return print("Tú número es Invalido")
 n = int(input("Favor de ingresar un número: "))
 siete(n)
-
+"""
     #3.-Programa que pida una cantidad al usuario, y también un interés mensual.
     # Si el interés mensual es mayor a 30% indicarle al usuario que el interés es incorrecto.
     # En caso contrario mostrar como resultado el interés que el usuario tiene que pagar con las cantidades ingresadas.
-
+"""
 def cuenta(a, b):
     if a >= 1 and a <= 30:
         return print(f"El interes a pagar de {a}, al interes {b} es de: {a * b}")
@@ -157,3 +157,4 @@ def cuenta(a, b):
 n = int(input("¿Cuanto dinero deseas ingresar? "))
 im = int(input("¿En cuanto interes mensual deseas invertir? "))
 cuenta(im, n)
+"""

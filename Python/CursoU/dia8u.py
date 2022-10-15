@@ -86,3 +86,76 @@ def fahrenToCel(cel):
 print(f'Los °{gradosFah} Fahrenheit en °Celcius son: {fahrenToCel(gradosFah)}')
 print(f'Los °{gradosCel} Celcius en °Fahrenheit son: {celciusToFah(gradosCel)}')
 """
+# Funciones lambda:
+# También son llamadas "Funciones anonimas.
+# Estas funciones son utilizadas para expresiones pequeñas que se pueden ocupar en cualquier lugar, y son de una sola expresión.
+# Sintaxis:
+"""
+suma = lambda a,b:a+b
+print(suma(10,20))
+# Más ejemplos de lambda:
+duplicar = lambda n: n*2
+par = lambda n: n % 2 == 0
+impar = lambda n: n % 2 != 0
+revertir = lambda cadena: cadena[::-1]
+"""
+# Como ves funcionan para consas sencillas, si son de un solo uso, haz una lambda, si es recurrente, si crea la función.
+"""
+x = lambda cadena: cadena[::-3]
+print(x('mundo'))
+# Más ejemplos de lambda:
+duplicar = lambda n: n*2
+par = lambda n: n % 2 == 0
+impar = lambda n: n % 2 != 0
+revertir = lambda cadena: cadena[::-1]
+"""
+#Practica1: Palindromo, crea un programa al cual se le sea imgresado un string y te diga si es un palindromo o no.
+"""
+palindromo = input('Ingresa una palabra para saber si es un palindromo:\n').lower().replace(' ', '')
+if palindromo == palindromo[::-1]:
+    print('Es Palindromo!')
+else:
+    print('No es Palindromo :c')
+""" #GG's
+#Practica2: Primalidad, crea un sistema que detecte si un número ingresado po rteclado es primo o no.
+"""
+primos = [1,2,3,5,7]
+num = int(input('Ingresa un número para saber si es primo: '))
+for i in range(8,100):
+    if (i % 2 != 0 and i % 3 != 0 and i % 5 != 0 and i % 7 != 0):
+        primos.append(i)
+if num in primos:
+    print('¡Número norteño!')
+else:
+    print('No es norteño')
+"""
+#Practica3: Generador de contraseñas, Crea un sistema que genere contraseñas aleatorias.
+# Se requiere: lista, lista mayuscula, lista minuscula, lista números y lista de simbolos, y luego armar una contraseña aleatoria sacando caracteres de estas listas:
+"""
+import random
+import secrets
+
+mayu = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+mini = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','p','q','r','s','t','u','v','w','x','y','z']
+nums = [1,2,3,4,5,6,7,8,9,0]
+char = ['!','#','$','%','&','+','*','-','_']
+cont = []
+digt = int(input('Cuantos caracteres necesitas para tu contraseña: '))
+for i in range(digt):
+    x = random.randrange(1,4)
+    if x == 1:
+        x = mayu
+    elif x == 2:
+        x = mini
+    elif x == 3:
+        x = nums
+    elif x == 4:
+        x = char
+    y = secrets.choice(x)
+    cont.append(y)
+contraseña = str(cont).replace(',','').replace(' ','').replace("'","")
+print(f'Tú nueva contaseña es: {contraseña}')
+"""
+# El módulo de secrets se usa esencialmente para el mismo propósito que el de random. Sin embargo, secrets proporciona un método criptográficamente seguro para implementar el PRNG.
+# En aplicaciones de la vida real como el almacenamiento de contraseñas, autenticación, cifrado y descifrado, y fichas. secrets es mucho más seguro que el uso de random, ya que sólo sirve para simulaciones u operaciones que no manejen datos sensibles.
+"""Aire visual entre ejercicios"""
