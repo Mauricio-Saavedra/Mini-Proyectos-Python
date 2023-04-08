@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="container-sm text-center">
+    <h1 class="display-3">Bienvenido a tu lista de tareas</h1>
+    <p class="lead">En esta aplicación podrás poner tus tareas pendientes y marcarlas cuando ya esten hechas; es recomentable que solo pongas aquellas que piensas realizar en el corto y mediano plazo.</p>
+    <hr class="my-4">
+    <p>¿Tienes una cuenta?</p>
+    <div class="d-flex justify-content-center"> <!--Este div esta hecho para poner los botones de iniciar sesión y registrarse, así como inidicar el tamaño de éstos-->
+        <a href="{{ url_for('auth.login') }}" class="btn btn-primary mx-2">Iniciar Sesión</a>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-secondary mx-2">Registrarse</a>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

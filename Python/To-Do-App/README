@@ -1,0 +1,4 @@
+Como no podía ser de otra manera, he codificado la aplicación más orifinal de mundo: una To-Do app.
+
+En requirements.txt vienen los paquetes que se necesitan para correr la app.
+una vez los tengas solo debes de poner [ py run.py ], crtl + click en el enlace para poder verla en tu navegador po rdefecto y ya.

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="container-fluid">    <!-- Metemos todo en una sección -->
+        <nav class="navbar">        <!-- Creamos una barra de navegación-->
+            <h1>{% block title %}Lista de Tareas{% endblock %}</h1>
+            <a href="{{ url_for('todo.create') }}" class="btn btn-success">Añadir</a>
+        </nav>
+        <table class="table">        <!-- Creamos la tabla donde irán todas las tareas -->
+            <thead>            <!-- la cabecera de la tabla -->
+                <tr>        <!-- Metemos los encabezados en un tr o Table Row, una fila -->
+                    <th class="col">Tareas</th>
+                    <th class="col">Estado</th>
+                    <th class="col" colspan="2">Opciones</th>    <!-- Metemos un colspan2 para los dos botones -->
+                </tr>
+            </thead>
+            <tbody>        <!-- El cuarpo de la tabla -->
+                {% for todo in todos | reverse %}    <!-- Para que ésta parte del código se repita tantas veces como tareas haya y le ponemos el filtro para ordenar las tareas de la primera a la última -->
+                {% if g.user.id == todo.create_by %}    <!-- Ésto es para que se haga una verificación de usuario y tareas, osea que solo se le muestren sus tareas al usuario que las ha creado -->
+                    <tr>
+                        <td>
+                            <h5>{{ todo.title }}</h5>
+                            <p>{{ todo.desc }}</p>
+                        </td>
+                        <td>    <!-- Acá abajo pongo la condicional para que muestre su estado con texto definido por mí -->
+                            {% if todo.state == false %}
+                                <span class="" style="color:#FF0075;"><b>Incompleto</b></span>
+                            {% else %}
+                                <span class="" style="color:rgb(16, 200, 151)"><b><i>Completado</i></b></span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('todo.update', id = todo.id) }}" class="btn btn-info btn-sm">Editar</a>    <!--En el URLFOR estamos mandando la función con la vista y la variable id para que funcione la vista [update]-->
+                        </td>
+                        <td>
+                            <a href="{{ url_for('todo.delete', id = todo.id) }}" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
