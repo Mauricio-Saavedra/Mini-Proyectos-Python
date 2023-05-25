@@ -1,4 +1,4 @@
-# Blog de Post
+# BlogPostMS
 
 ¡Hola! Hice un Blog en el cual se desarrolla con Python, Flask, Jinja, CKEditor y PostgresSQL; lo siguiente.
 -Páginas de HTML con jinja para usar las plantillas (Templates) y hacer evitar repetir código.
